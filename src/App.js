@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Main from "./components/Main";
+import ThankYou from "./components/ThankYou";
+import { useState } from "react";
 
 function App() {
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  function handleRating(index) {
+    setActiveIndex((prevIndex) => (prevIndex === index ? -1 : index));
+  }
+
+  function handleSubmit() {
+    setIsSubmitted(true);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container">
+        {isSubmitted ? (
+          <ThankYou selectedRating={activeIndex} />
+        ) : (
+          <Main
+            submit={handleSubmit}
+            handleRating={handleRating}
+            activeIndex={activeIndex}
+          />
+        )}
+      </div>
+    </>
   );
 }
 

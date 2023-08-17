@@ -1,38 +1,160 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: hsl(216, 12%, 8%);
+  font-family: "Overpass", sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  max-width: 1440px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*////////////// Typography /////////////*/
+
+.text-white {
+  color: hsl(0, 0%, 100%);
+}
+
+.text-gray {
+  color: hsl(217, 12%, 63%);
+}
+
+.text-container,
+.thankyou-text-container {
+  flex-grow: 2;
+
+  margin-top: 40px;
+  line-height: 1.5rem;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+}
+
+.main-heading {
+  margin-bottom: 20px;
+}
+
+.main-text {
+  font-size: 1.1rem;
+}
+
+/*///////////////////////////////// 
+      Main Component Styling
+ ///////////////////////////////*/
+
+.main-component,
+.thankyou-component {
+  width: 400px;
+  background-color: hsl(213, 19%, 15%);
+  padding: 30px;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/*//////////// Star Sub-Component Styling  /////////////*/
+
+.star-icon {
+  background-color: hsl(216, 12%, 24%);
+  border-radius: 50%;
+  width: 55px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  padding: 20px;
+}
+
+/*////////////// Button Sub-Component Styling /////////////*/
+
+.btn-container {
+  flex-grow: 2;
+
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.rating-btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating-btn {
+  width: 55px;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: hsl(216, 15%, 24%);
+  padding: 20px;
+  cursor: pointer;
+}
+
+.rating-btn:hover {
+  background-color: hsl(216, 15%, 44%);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.rating-btn-active {
+  background-color: hsl(25, 97%, 53%) !important;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.submit-btn {
+  margin-top: 30px;
+  background-color: hsl(25, 97%, 53%);
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  outline: none;
+}
+
+.submit-btn-active {
+  background-color: white;
+  color: hsl(25, 97%, 53%);
+}
+
+/*//////////////////////////////////// 
+      ThankYou Component Styling
+ //////////////////////////////////*/
+
+.thankyou-component {
+  align-items: center;
+  text-align: center;
+}
+
+/*//////// ThankYou Sub-Component Styling ///////*/
+
+.thankyou-text-container {
+  line-height: 1.7rem;
+}
+
+/*////////// Rating Sub-Component Styling /////////*/
+
+.rating {
+  font-size: 1.1rem;
+  margin-top: 35px;
+  background-color: hsl(216, 15%, 20%);
+  padding: 5px 20px;
+  border-radius: 30px;
+  color: hsl(25, 70%, 40%);
 }
